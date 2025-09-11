@@ -23,7 +23,7 @@ PROMPT_TEMPLATE = """\
 """
 # 動画生成の設定 --- (*3)
 DREAMBOOTH_PATH = "models/DreamBooth_LoRA/leosamsHelloworldXL_filmGrain20.safetensors"
-ROLA_MODE_PATH = "models/DreamBooth_LoRA/TUSUN.safetensors"
+LORA_MODE_PATH = "models/DreamBooth_LoRA/TUSUN.safetensors"
 INFERENCE_CONFIG = "configs/inference/inference-v3.yaml"
 MOTION_MODULE = "models/Motion_Module/v3_sd15_mm.ckpt"
 STEPS = 25
@@ -75,7 +75,7 @@ def generate_video(text_list): # --- (*8)
     # YAMLファイルの生成 --- (*10)
     yaml_data = [{
         "dreambooth_path": DREAMBOOTH_PATH,
-        "rola_mode_path": ROLA_MODE_PATH,
+        "lora_mode_path": LORA_MODE_PATH,
         "inference_config": INFERENCE_CONFIG,
         "motion_module": MOTION_MODULE,
         "steps": STEPS,
