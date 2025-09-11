@@ -45,7 +45,7 @@ def text2image(prompt, image_path, negative_prompt="",
 if __name__ == "__main__":
     os.makedirs("images", exist_ok=True)  # 保存先ディレクトリの作成
     # 画像を生成 --- (*6)
-    prompt = ("A beautiful giraf in the city."
+    prompt = ("A beautiful giraffe in the city."
         " anime style, best quality, high resolution")
     test_image_path = "images/flux_image01.png"
     text2image(prompt, test_image_path)
