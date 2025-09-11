@@ -66,10 +66,10 @@ def generate_prompt(input_text): # --- (*7)
 def generate_video(text_list): # --- (*8)
     """動画を生成する"""
     # 動画生成用のプロンプトを生成 --- (*9)
-    prompt_lsit = []
+    prompt_list = []
     for input_text in text_list:
         prompt = generate_prompt(input_text)
-        prompt_lsit.append(prompt)
+        prompt_list.append(prompt)
     # ランダムなシード値を生成
     seed = random.randint(1, 1000000)
     # YAMLファイルの生成 --- (*10)
@@ -80,9 +80,9 @@ def generate_video(text_list): # --- (*8)
         "motion_module": MOTION_MODULE,
         "steps": STEPS,
         "lora_alpha": 0.6,
-        "prompt": prompt_lsit,
-        "n_prompt": ["worst quality, low quality" for _ in prompt_lsit],
-        "seed": [seed for _ in prompt_lsit],
+        "prompt": prompt_list,
+        "n_prompt": ["worst quality, low quality" for _ in prompt_list],
+        "seed": [seed for _ in prompt_list],
         "guidance_scale": 7.5,
     }]
     with open(FILE_YAML, "w", encoding="utf-8") as f:
