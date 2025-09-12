@@ -29,7 +29,7 @@ def ask():
         if "</think>" in answer:
             answer = answer.split("</think>")[1].strip()
 
-        # 結果を元にしてマーメイドズを出力してもらう --- (*6)
+        # 結果を元にしてMermaidの図を出力してもらう --- (*6)
         prompt = config.ZU_TEMPLATE.format(
             question=question,
             context=answer)
