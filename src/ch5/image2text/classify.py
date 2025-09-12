@@ -53,7 +53,7 @@ def main(): # --- (*3)
         # 分類に失敗したらやり直すためのループ --- (*7)
         for _ in range(5):
             answer = i2t.image_to_text(file, PROMPT).strip()
-            # 結果がカテゴルに一致するか確認 --- (*8)
+            # 結果がカテゴリに一致するか確認 --- (*8)
             if answer in CATEGORIES:
                 break
             print(f"┣━━ 分類失敗: {answer}")
