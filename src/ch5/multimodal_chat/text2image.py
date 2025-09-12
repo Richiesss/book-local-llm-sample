@@ -28,7 +28,7 @@ def text2image(
             if supports_fp16:
                 dtype = torch.float16
         elif torch.backends.mps.is_available():
-            device = "mps" # Applaシリコンで利用可能ならMPSを使用
+            device = "mps" # macOS(Appleシリコン)で利用可能ならMPSを使用
         print(f"Using device: {device}, dtype: {dtype}")
         # 画像生成モデルを読み込む --- (*3)
         SD_PIPE = StableDiffusionPipeline.from_pretrained(
