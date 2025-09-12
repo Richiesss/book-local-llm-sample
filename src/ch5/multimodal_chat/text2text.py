@@ -9,7 +9,7 @@ def text2text(messages, model=OLLAMA_CHAT_MODEL, show_output=True):
     data = {
         "model": model,
         "messages": messages,
-        "templerature": 0.8,
+        "temperature": 0.8,
         "stream": True  # ストリーム出力を有効にする --- (*2)
     }
     result = ""  # 結果を格納する変数
