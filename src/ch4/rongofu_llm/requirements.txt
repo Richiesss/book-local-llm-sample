@@ -1,2 +1,9 @@
-unsloth
-numpy<2.0
+unsloth==2024.8
+numpy==1.26.4
+torch==2.1.0
+transformers==4.44.2
+trl==0.8.6
+datasets==4.4.1
+peft==0.12.0
+bitsandbytes==0.43.3
+accelerate==0.34.2
