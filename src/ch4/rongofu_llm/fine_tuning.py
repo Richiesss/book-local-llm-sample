@@ -26,24 +26,13 @@ model = FastLanguageModel.get_peft_model(
     bias="none",
 )
 
-# データセットをトークナイズ ---- (*3)
-def dataset_tokenize(example):
-    """データセットのテキストをトークナイズする関数"""
-    print("tokenize:", example["text"])
-    return tokenizer(
-        example["text"],
-        padding="max_length",
-        truncation=True,
-        max_length=MAX_SEQ_LENGTH,
-    )
-tokenized_dataset = dataset.map(dataset_tokenize,
-    remove_columns=dataset.column_names)
-
 # Fine-Tuningを実行する --- (*4)
 trainer = SFTTrainer(
     model=model,
     tokenizer=tokenizer,
-    train_dataset=tokenized_dataset,
+    train_dataset=dataset,
+    dataset_text_field="text",
+    max_seq_length=MAX_SEQ_LENGTH,
     args=TrainingArguments(
         output_dir=MODEL_SAVE_DIR,
         max_steps=MAX_STEPS, # 最大ステップ数 --- (*4-1)

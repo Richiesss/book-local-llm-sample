@@ -12,7 +12,8 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = True,
 )
 # モデルを推論モードに設定
-model.eval()
+FastLanguageModel.for_inference(model)
+
 
 # プロンプトのテンプレート --- (*2)
 PROMPT_TEMPLATE = """\
